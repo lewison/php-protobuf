@@ -54,10 +54,10 @@ if (!debug_backtrace()) {
         }
 
         // Look for remaining occurrences of -o <val> (space in between):
-        while ($matches = preg_grep("/--?$key/", $GLOBALS['argv'])) {
+        while ($matches = preg_grep("/^--?$key/", $GLOBALS['argv'])) {
             foreach ($matches as $key => $match) {
                 unset($GLOBALS['argv'][$key]);
-                unset($GLOBALS['argv'][$key + 1]);
+                //unset($GLOBALS['argv'][$key + 1]);
             }
         }
     }
